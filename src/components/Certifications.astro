@@ -1,0 +1,41 @@
+---
+const certifications = [
+  {
+    title: "GCP Associate Cloud Engineer",
+    issuer: "Google Cloud Platform",
+    status: "Completed",
+    description: "Fundamental understanding of GCP Cloud concepts, services, security, and billing."
+  },
+  {
+    title: "Docker Course for the Beginner",
+    issuer: "Kodekloud",
+    status: "Completed",
+    description: "Core concepts of containerization and Docker technology."
+  },
+  {
+    title: "Microsoft AI-900",
+    issuer: "Microsoft Azure",
+    status: "Completed",
+    description: "Basic concepts of Artificial Intelligence, Azure AI services, machine learning models, data preparation and processing."
+  }
+];
+---
+<section id="certifications" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Certifications</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {certifications.map(cert => (
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-semibold">{cert.title}</h3>
+            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">
+              {cert.status}
+            </span>
+          </div>
+          <p class="text-gray-600 text-sm mb-2">Issuer: {cert.issuer}</p>
+          <p class="text-gray-600 mb-3">{cert.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

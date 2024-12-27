@@ -1,0 +1,50 @@
+---
+const skills = [
+  {
+    category: "Cloud Platforms",
+    items: ["AWS", "Google Cloud Platform"]
+  },
+  {
+    category: "Infrastructure as Code",
+    items: ["Terraform", "CloudFormation", "Ansible"]
+  },
+  {
+    category: "Containerization & Orchestration",
+    items: ["Docker", "Kubernetes", "Docker Compose"]
+  },
+  {
+    category: "CI/CD",
+    items: ["Jenkins", "GitHub Actions", "GitLab CI"]
+  },
+  {
+    category: "Fundamentals",
+    items: ["LinuxOS", "Networking"]
+  },
+  {
+    category: "Version Control",
+    items: ["Git", "GitHub", "GitLab"]
+  }
+];
+---
+<section id="skills" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {skills.map(category => (
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+          <h3 class="text-xl font-semibold mb-4">{category.category}</h3>
+          <ul class="space-y-2">
+            {category.items.map(item => (
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
